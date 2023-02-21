@@ -1,0 +1,14 @@
+local obfuscator = {}
+
+-- obfuscate the code
+
+function obfuscator.obfuscate(code)
+    -- obfuscate the code using bytecode
+    local bytecode = string.dump(loadstring(code))
+    -- convert the bytecode to hex
+    local hex = string.format("%x", bytecode)
+    -- convert the hex to base64
+    local base64 = mime.b64(hex)
+    -- return the obfuscated code
+    return base64
+end
